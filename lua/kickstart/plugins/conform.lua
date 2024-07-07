@@ -1,10 +1,14 @@
+local prettier_formatters = { { 'prettierd', 'prettier' } }
+
 return {
   { -- Autoformat
     'stevearc/conform.nvim',
     lazy = false,
+    event = { 'BufWritePre' },
+    cmd = { 'ConformInfo' },
     keys = {
       {
-        '<leader>f',
+        '<leader>cf',
         function()
           require('conform').format { async = true, lsp_fallback = true }
         end,
@@ -31,7 +35,28 @@ return {
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
-        javascript = { { 'prettierd', 'prettier' } },
+        css = prettier_formatters,
+        graphql = prettier_formatters,
+        handlebars = prettier_formatters,
+        html = prettier_formatters,
+        javascript = prettier_formatters,
+        javascriptreact = prettier_formatters,
+        json = prettier_formatters,
+        jsonc = prettier_formatters,
+        less = prettier_formatters,
+        markdown = prettier_formatters,
+        ['markdown.mdx'] = prettier_formatters,
+        scss = prettier_formatters,
+        typescript = prettier_formatters,
+        typescriptreact = prettier_formatters,
+        vue = prettier_formatters,
+        yaml = prettier_formatters,
+      },
+      -- Customize formatters
+      formatters = {
+        shfmt = {
+          prepend_args = { '-i', '2' },
+        },
       },
     },
   },
