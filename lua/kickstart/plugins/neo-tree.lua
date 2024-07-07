@@ -11,13 +11,27 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
+    { '<leader>e', ':Neotree toggle<CR>', { desc = 'NeoTree toggle' } },
+    {
+      '<leader>ge',
+      function()
+        require('neo-tree.command').execute { source = 'git_status', toggle = true }
+      end,
+      desc = 'Git Explorer',
+    },
+    {
+      '<leader>be',
+      function()
+        require('neo-tree.command').execute { source = 'buffers', toggle = true }
+      end,
+      desc = 'Buffer Explorer',
+    },
   },
   opts = {
     filesystem = {
       window = {
         mappings = {
-          ['\\'] = 'close_window',
+          ['<leader>e'] = 'close_window',
         },
       },
     },
