@@ -17,14 +17,14 @@ return {
       function()
         require('neo-tree.command').execute { source = 'git_status', toggle = true }
       end,
-      desc = 'Git Explorer',
+      desc = 'Git [e]xplorer',
     },
     {
       '<leader>be',
       function()
         require('neo-tree.command').execute { source = 'buffers', toggle = true }
       end,
-      desc = 'Buffer Explorer',
+      desc = 'Buffer [e]xplorer',
     },
   },
   opts = {
