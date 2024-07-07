@@ -145,6 +145,7 @@ return {
       --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
 
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -217,10 +218,11 @@ return {
               -- by the server configuration above. Useful when disabling
               -- certain features of an LSP (for example, turning off formatting for tsserver)
               server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-              require('lspconfig')[server_name].setup(server)
             else
-              print('server ' .. server_name .. ' could not be set up')
+              server = {}
             end
+
+            require('lspconfig')[server_name].setup(server)
           end,
         },
       }
