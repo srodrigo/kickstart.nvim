@@ -42,7 +42,7 @@ require('lazy').setup({
 
   require 'kickstart/plugins/tokyonight',
 
-  require 'kickstart/plugins/mini',
+  require 'kickstart/plugins/lualine',
 
   require 'kickstart/plugins/gitsigns',
 
