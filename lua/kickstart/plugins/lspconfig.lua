@@ -191,6 +191,8 @@ return {
       local enabled_servers = {
         'tsserver',
         'lua_ls',
+        'html-lsp',
+        'cssls',
       }
 
       local enabled_formatters = {
