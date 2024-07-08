@@ -24,7 +24,7 @@ require('lazy').setup({
   ----------------
 
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth',   -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   'tpope/vim-surround', -- Provide surroundings for parentheses, brackets, quotes and others
 
@@ -59,6 +59,8 @@ require('lazy').setup({
   require 'kickstart/plugins/cmp',
 
   require 'kickstart/plugins/treesitter',
+
+  require 'kickstart/plugins/fugitive',
 
   ------------------------
   -- Nice-to-have plugins
