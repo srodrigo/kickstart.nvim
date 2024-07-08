@@ -35,7 +35,6 @@ return {
         ['<leader>s'] = { name = '[s]earch', _ = 'which_key_ignore' },
         ['<leader>w'] = { name = '[w]orkspace', _ = 'which_key_ignore' },
         ['<leader><tab>'] = { name = '+tabs', _ = 'which_key_ignore' },
-        ['<leader>t'] = { name = '[t]oggle', _ = 'which_key_ignore' },
         ['<leader>u'] = { name = '[u]i', _ = 'which_key_ignore' },
       }
       -- visual mode
