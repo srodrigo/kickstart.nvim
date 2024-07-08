@@ -81,6 +81,7 @@ return {
       vim.keymap.set('n', '<leader>:', builtin.commands, { desc = 'Search [c]ommands' })
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search [h]elp' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = 'Search [k]eymaps' })
+      vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find [f]iles' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Search [f]iles' })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = 'Search [s]elect Telescope' })
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = 'Search current [w]ord' })
@@ -108,11 +109,8 @@ return {
       -- It's also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
       vim.keymap.set('n', '<leader>s/', function()
-        builtin.live_grep {
-          grep_open_files = true,
-          prompt_title = 'Live Grep in Open Files',
-        }
-      end, { desc = 'Search [/] in Open Files' })
+        builtin.live_grep { prompt_title = 'Live Grep' }
+      end, { desc = 'Search [/]' })
 
       -- Shortcut for searching your Neovim configuration files
       vim.keymap.set('n', '<leader>sc', function()

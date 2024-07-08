@@ -25,6 +25,7 @@ return {
       require('which-key').register {
         ['<leader>b'] = { name = '[b]uffer', _ = 'which_key_ignore' },
         ['<leader>c'] = { name = '[c]ode', _ = 'which_key_ignore' },
+        ['<leader>f'] = { name = '[f]ile', _ = 'which_key_ignore' },
         ['<leader>e'] = { name = 'Tree [e]xplorer', _ = 'which_key_ignore' },
         ['<leader>g'] = {
           name = '[g]it',
