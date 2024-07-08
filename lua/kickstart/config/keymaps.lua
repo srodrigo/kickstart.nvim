@@ -102,7 +102,6 @@ map('n', '<leader>gd', '<cmd>:tab Gdiff<cr>', { desc = 'Open File [d]iff' })
 map('n', '<leader>gD', '<cmd>:tab Git<cr>', { desc = 'Open [D]iff View' })
 map('n', '<leader>gm', '<cmd>Git mergetool<cr>', { desc = 'Open [m]ergetool' })
 map('n', '<leader>gM', '<cmd>Gdiffsplit!<cr>', { desc = 'Open [M]erge View' })
-map('n', '<leader>gh', '<cmd>Git log -- %<cr><cr>', { desc = 'Open File [h]istory' })
 map('n', '<leader>gH', '<cmd>:tab Git log<cr>', { desc = 'Open [H]istory' })
 
 -- Terminal
