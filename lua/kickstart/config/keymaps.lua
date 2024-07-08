@@ -110,8 +110,10 @@ map('n', '<leader>gH', '<cmd>:tab Git log<cr>', { desc = 'Open [H]istory' })
 map('n', '<leader><tab>o', '<cmd>tabonly<cr>', { desc = 'Close Other Tabs' })
 map('n', '<leader><tab><tab>', '<cmd>tabnew<cr>', { desc = 'New Tab' })
 map('n', '<leader><tab>]', '<cmd>tabnext<cr>', { desc = 'Next Tab' })
-map('n', '<leader><tab>d', '<cmd>tabclose<cr>', { desc = 'Close Tab' })
 map('n', '<leader><tab>[', '<cmd>tabprevious<cr>', { desc = 'Previous Tab' })
+map('n', '<leader><tab>d', '<cmd>tabclose<cr>', { desc = 'Close Tab' })
+map('n', ']<tab>', '<cmd>tabnext<cr>', { desc = 'Next Tab' })
+map('n', '[<tab>', '<cmd>tabprevious<cr>', { desc = 'Previous Tab' })
 
 -- UI toggles
 if vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint then
