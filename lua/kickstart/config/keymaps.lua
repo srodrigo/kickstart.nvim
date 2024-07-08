@@ -125,3 +125,4 @@ map('n', '<leader>ud', function()
 end, { desc = 'Toggle [d]iagnostics' })
 
 map('n', '<leader>ub', '<cmd>Gitsigns toggle_current_line_blame<cr>', { desc = 'Toggle Git Line [b]lame' })
+map('n', '<leader>uD', '<cmd>Gitsigns toggle_deleted<cr>', { desc = 'Toggle Git show [D]eleted' })

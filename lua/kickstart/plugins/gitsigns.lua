@@ -29,6 +29,10 @@ return {
       --   topdelete = { text = "" },
       --   changedelete = { text = "▎" },
       -- },
+      current_line_blame = true,
+      current_line_blame_opts = {
+        delay = 400,
+      },
       on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
 
@@ -77,11 +81,6 @@ return {
         end, { desc = 'Git [D]iff against last commit' })
         -- text object
         map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'GitSigns Select Hunk' })
-
-        -- TODO: Move to ui section
-        -- Toggles
-        map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
-        map('n', '<leader>tD', gitsigns.toggle_deleted, { desc = '[T]oggle git show [D]eleted' })
       end,
     },
   },
