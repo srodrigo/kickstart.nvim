@@ -62,7 +62,7 @@ return {
           },
           -- stylua: ignore
           {
-            'filename', path = 1, shorting_target = 60,
+            'filename', path = 1,
           },
         },
 
