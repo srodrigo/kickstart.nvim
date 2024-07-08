@@ -62,6 +62,8 @@ require('lazy').setup({
 
   require 'kickstart/plugins/fugitive',
 
+  require 'kickstart/plugins/spectre',
+
   ------------------------
   -- Nice-to-have plugins
   ------------------------
