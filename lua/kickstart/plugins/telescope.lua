@@ -78,6 +78,7 @@ return {
             },
           },
           layout_config = { horizontal = { width = 0.95, height = 0.95 } },
+          wrap_results = true,
         },
         -- pickers = {}
         extensions = {
