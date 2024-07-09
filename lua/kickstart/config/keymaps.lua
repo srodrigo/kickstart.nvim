@@ -98,7 +98,7 @@ map('n', '[q', vim.cmd.cprev, { desc = 'Previous Quickfix' })
 map('n', ']q', vim.cmd.cnext, { desc = 'Next Quickfix' })
 
 -- Git
-map('n', '<leader>gd', '<cmd>:tab Gdiff<cr>', { desc = 'Open File [d]iff' })
+map('n', '<leader>gd', '<cmd>Gdiffsplit<cr>', { desc = 'Open File [d]iff' })
 map('n', '<leader>gD', '<cmd>:tab Git<cr>', { desc = 'Open [D]iff View' })
 map('n', '<leader>gm', '<cmd>Git mergetool<cr>', { desc = 'Open [m]ergetool' })
 map('n', '<leader>gM', '<cmd>Gdiffsplit!<cr>', { desc = 'Open [M]erge View' })
