@@ -100,20 +100,38 @@ return {
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search [h]elp' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = 'Search [k]eymaps' })
       vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find [f]iles' })
+      vim.keymap.set(
+        'n',
+        '<leader>fa',
+        "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--ignore-case', '--hidden', '--no-ignore', '-g', '!.git'} })<cr>",
+        { desc = 'Find [a]ll Files (hidden/gitignore)' }
+      )
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Search [f]iles' })
-      vim.keymap.set('n', '<leader>sa', builtin.find_files, { desc = 'Search by Grep With [a]rgs' })
+      vim.keymap.set(
+        'n',
+        '<leader>sa',
+        "<cmd>lua require'telescope.builtin'.live_grep({ additional_args = { '--hidden' } })<cr>",
+        { desc = 'Search [a]ll (hidden)' }
+      )
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = 'Search [s]elect Telescope' })
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = 'Search current [w]ord' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Search by [g]rep' })
+      vim.keymap.set('n', '<leader>s/', "<cmd>lua require'telescope.builtin'.grep_string({ search = '' })<cr>", { desc = 'Search all [/]' })
+      vim.keymap.set(
+        'n',
+        '<leader>st',
+        "<cmd>lua require'telescope.builtin'.grep_string({ search = '', only_sort_text = true })<cr>",
+        { desc = 'Search [t]ext' }
+      )
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { buffer = true, desc = 'Search [d]iagnostics' })
-      vim.keymap.set('n', '<leader>sD', builtin.diagnostics, { desc = 'Search [d]iagnostics' })
+      vim.keymap.set('n', '<leader>sD', builtin.diagnostics, { desc = 'Search [D]iagnostics' })
       vim.keymap.set('n', '<leader>sm', builtin.diagnostics, { desc = 'Search [m]arks' })
       vim.keymap.set('n', '<leader>so', builtin.diagnostics, { desc = 'Search [o]ptions' })
       vim.keymap.set('n', '<leader>sq', builtin.diagnostics, { desc = 'Search [q]uickfix' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Search [r]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', '<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>', { desc = '[ ] Find existing buffers' })
-      vim.keymap.set('n', '<leader>/', builtin.grep_string, { desc = 'Grep' })
+      vim.keymap.set('n', '<leader>/', builtin.live_grep, { desc = 'Search [/]' })
 
       -- Slightly advanced example of overriding default behavior and theme
       -- vim.keymap.set('n', '<leader>/', function()
@@ -124,12 +142,8 @@ return {
       --   })
       -- end, { desc = '[/] Fuzzily search in current buffer' })
 
-      -- TODO: remove?
       -- It's also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
-      vim.keymap.set('n', '<leader>s/', function()
-        builtin.live_grep { prompt_title = 'Live Grep' }
-      end, { desc = 'Search [/]' })
 
       -- Shortcut for searching your Neovim configuration files
       vim.keymap.set('n', '<leader>sc', function()
