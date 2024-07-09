@@ -77,6 +77,7 @@ return {
               ['<C-b>'] = require('telescope.actions').preview_scrolling_up,
             },
           },
+          layout_config = { horizontal = { width = 0.95, height = 0.95 } },
         },
         -- pickers = {}
         extensions = {
