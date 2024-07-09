@@ -69,7 +69,13 @@ return {
         --  All the info you're looking for is in `:help telescope.setup()`
         defaults = {
           mappings = {
-            i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+            i = {
+              ['<c-enter>'] = 'to_fuzzy_refine',
+              ['<S-Down>'] = require('telescope.actions').cycle_history_next,
+              ['<S-Up>'] = require('telescope.actions').cycle_history_prev,
+              ['<C-f>'] = require('telescope.actions').preview_scrolling_down,
+              ['<C-b>'] = require('telescope.actions').preview_scrolling_up,
+            },
           },
         },
         -- pickers = {}
