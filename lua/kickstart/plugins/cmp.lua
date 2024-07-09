@@ -74,6 +74,9 @@ return {
           ['<Tab>'] = cmp.mapping.select_next_item(),
           ['<S-Tab>'] = cmp.mapping.select_prev_item(),
 
+          -- Replace text under cursor upon selecting a completion
+          ['<S-CR>'] = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Replace },
+
           -- Manually trigger a completion from nvim-cmp.
           --  Generally you don't need this, because nvim-cmp will display
           --  completions whenever it has completion options available.
