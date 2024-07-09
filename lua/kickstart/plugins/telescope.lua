@@ -26,6 +26,18 @@ return {
         end,
       },
       { 'nvim-telescope/telescope-ui-select.nvim' },
+      {
+        'nvim-telescope/telescope-live-grep-args.nvim',
+        -- This will not install any breaking changes.
+        -- For major updates, this must be adjusted manually.
+        version = '^1.0.0',
+        config = function()
+          local ok, err = pcall(require('telescope').load_extension, 'live_grep_args')
+          if not ok then
+            print('Failed to load `telescope-live-grep-args.nvim`:\n' .. err)
+          end
+        end,
+      },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
@@ -83,6 +95,7 @@ return {
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = 'Search [k]eymaps' })
       vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find [f]iles' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Search [f]iles' })
+      vim.keymap.set('n', '<leader>sa', builtin.find_files, { desc = 'Search by Grep With [a]rgs' })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = 'Search [s]elect Telescope' })
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = 'Search current [w]ord' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Search by [g]rep' })
