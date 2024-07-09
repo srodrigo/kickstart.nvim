@@ -5,7 +5,7 @@ local M = {}
 ---@field handler? lsp.Handler
 
 ---@param opts LspCommand
-function M.execute(opts)
+function M.executeCommand(opts)
   local params = {
     command = opts.command,
     arguments = opts.arguments,
@@ -13,7 +13,7 @@ function M.execute(opts)
   return vim.lsp.buf_request(0, 'workspace/executeCommand', params, opts.handler)
 end
 
-function M.applyAction(action)
+function M.executeAction(action)
   vim.lsp.buf.code_action {
     apply = true,
     context = {
