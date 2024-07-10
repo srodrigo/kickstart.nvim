@@ -33,8 +33,8 @@ return {
           ['h'] = { name = '[h]unk', _ = 'which_key_ignore' },
         },
         ['<leader>s'] = { name = '[s]earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[w]orkspace', _ = 'which_key_ignore' },
-        ['<leader><tab>'] = { name = '+tabs', _ = 'which_key_ignore' },
+        ['<leader>w'] = { name = '[w]indow', _ = 'which_key_ignore' },
+        ['<leader><tab>'] = { name = '+tab', _ = 'which_key_ignore' },
         ['<leader>u'] = { name = '[u]i', _ = 'which_key_ignore' },
       }
       -- visual mode

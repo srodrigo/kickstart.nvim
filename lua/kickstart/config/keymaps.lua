@@ -68,6 +68,9 @@ map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+map('n', '<C-m>', '<C-w>|<C-w>_', { desc = 'Maximise Window' })
+map('n', '<leader>wm', '<C-w>|<C-w>_', { desc = '[m]aximise Window' })
+map('n', '<leader>w=', '<C-w>=', { desc = '[=]lise Windows' })
 
 -- Resize window using <ctrl> arrow keys
 map('n', '<C-Up>', '<cmd>resize +2<cr>', { desc = 'Increase Window Height' })
@@ -105,9 +108,6 @@ map('n', '<leader>gM', '<cmd>Gdiffsplit!<cr>', { desc = 'Open [M]erge View' })
 map('n', '<leader>gH', '<cmd>:tab Git log<cr>', { desc = 'Open [H]istory' })
 
 -- Terminal
-
--- Windows
--- TODO: Maximise window
 
 -- Tabs
 map('n', '<leader><tab>o', '<cmd>tabonly<cr>', { desc = 'Close Other Tabs' })
