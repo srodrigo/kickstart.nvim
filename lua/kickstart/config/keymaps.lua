@@ -108,6 +108,8 @@ map('n', '<leader>gM', '<cmd>Gdiffsplit!<cr>', { desc = 'Open [M]erge View' })
 map('n', '<leader>gH', '<cmd>:tab Git log<cr>', { desc = 'Open [H]istory' })
 
 -- Terminal
+map({ 'n', 't' }, '<C-\\>', '<cmd>TermToggleVertical<cr>', { desc = 'Toggle Terminal Vertical', silent = true })
+map({ 'n', 't' }, '<C-/>', '<cmd>TermToggleHorizontal<cr>', { desc = 'Toggle Terminal Horizontal', silent = true })
 
 -- Tabs
 map('n', '<leader><tab>o', '<cmd>tabonly<cr>', { desc = 'Close Other Tabs' })
