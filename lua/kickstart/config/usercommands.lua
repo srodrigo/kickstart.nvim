@@ -40,6 +40,8 @@ local function toggleTerm(orientation)
   end
 end
 
+-- Terminal commands
+
 vim.api.nvim_create_user_command('TermToggleVertical', function()
   vim.notify ':TermToggleVertical'
   toggleTerm 'vertical'
@@ -49,3 +51,9 @@ vim.api.nvim_create_user_command('TermToggleHorizontal', function()
   vim.notify ':TermToggleHorizontal'
   toggleTerm 'horizontal'
 end, {})
+
+-- Better write and quit
+vim.api.nvim_create_user_command('Wq', 'wq', {})
+vim.api.nvim_create_user_command('W', 'w', {})
+vim.api.nvim_create_user_command('Qa', 'qa', {})
+vim.api.nvim_create_user_command('Q', 'q', {})
