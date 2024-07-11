@@ -105,7 +105,7 @@ map('n', '<leader>gd', '<cmd>Gdiffsplit<cr>', { desc = 'Open File [d]iff' })
 map('n', '<leader>gD', '<cmd>:tab Git<cr>', { desc = 'Open [D]iff View' })
 map('n', '<leader>gm', '<cmd>Git mergetool<cr>', { desc = 'Open [m]ergetool' })
 map('n', '<leader>gM', '<cmd>Gdiffsplit!<cr>', { desc = 'Open [M]erge View' })
-map('n', '<leader>gH', '<cmd>:tab Git log<cr>', { desc = 'Open [H]istory' })
+map('n', '<leader>gl', '<cmd>:tab Git log<cr>', { desc = 'Open [l]og' })
 
 -- Terminal
 map({ 'n', 't' }, '<C-\\>', '<cmd>TermToggleVertical<cr>', { desc = 'Toggle Terminal Vertical', silent = true })
