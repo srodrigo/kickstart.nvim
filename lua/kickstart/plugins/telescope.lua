@@ -108,7 +108,7 @@ return {
         { desc = 'Find [a]ll Files (hidden/gitignore)' }
       )
       vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = 'Find Recent Files ("." for repeat)' })
-      vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Search [f]iles' })
+      vim.keymap.set('n', '<leader>sf', '<cmd>Telescope live_grep_args<cr>', { desc = 'Search [f]uzzy (Args)' })
       vim.keymap.set(
         'n',
         '<leader>sa',
