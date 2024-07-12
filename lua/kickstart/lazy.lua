@@ -24,9 +24,6 @@ require('lazy').setup({
   ----------------
 
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-
-  'tpope/vim-surround', -- Provide surroundings for parentheses, brackets, quotes and others
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -40,29 +37,33 @@ require('lazy').setup({
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
 
-  require 'kickstart/plugins/tokyonight',
+  require 'kickstart.plugins.sleuth',
 
-  require 'kickstart/plugins/lualine',
+  require 'kickstart.plugins.surround',
 
-  require 'kickstart/plugins/gitsigns',
+  require 'kickstart.plugins.tokyonight',
 
-  require 'kickstart/plugins/which-key',
+  require 'kickstart.plugins.lualine',
+
+  require 'kickstart.plugins.gitsigns',
+
+  require 'kickstart.plugins.which-key',
 
   require 'kickstart.plugins.neo-tree',
 
-  require 'kickstart/plugins/telescope',
+  require 'kickstart.plugins.telescope',
 
-  require 'kickstart/plugins/lspconfig',
+  require 'kickstart.plugins.lspconfig',
 
-  require 'kickstart/plugins/conform',
+  require 'kickstart.plugins.conform',
 
-  require 'kickstart/plugins/cmp',
+  require 'kickstart.plugins.cmp',
 
-  require 'kickstart/plugins/treesitter',
+  require 'kickstart.plugins.treesitter',
 
-  require 'kickstart/plugins/fugitive',
+  require 'kickstart.plugins.fugitive',
 
-  require 'kickstart/plugins/spectre',
+  require 'kickstart.plugins.spectre',
 
   ------------------------
   -- Nice-to-have plugins
@@ -82,7 +83,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
 
-  require 'kickstart/plugins/todo-comments',
+  require 'kickstart.plugins.todo-comments',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

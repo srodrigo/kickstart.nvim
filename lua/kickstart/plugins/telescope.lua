@@ -8,7 +8,7 @@
 return {
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
-    event = 'VimEnter',
+    event = 'VeryLazy',
     branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
@@ -107,6 +107,7 @@ return {
         "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--ignore-case', '--hidden', '--no-ignore', '-g', '!.git'} })<cr>",
         { desc = 'Find [a]ll Files (hidden/gitignore)' }
       )
+      vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = 'Find Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Search [f]iles' })
       vim.keymap.set(
         'n',
@@ -130,7 +131,6 @@ return {
       vim.keymap.set('n', '<leader>so', builtin.diagnostics, { desc = 'Search [o]ptions' })
       vim.keymap.set('n', '<leader>sq', builtin.diagnostics, { desc = 'Search [q]uickfix' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Search [r]esume' })
-      vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', '<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>', { desc = '[ ] Find existing buffers' })
       vim.keymap.set('n', '<leader>/', builtin.live_grep, { desc = 'Search [/]' })
 

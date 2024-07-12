@@ -3,7 +3,6 @@ local prettier_formatters = { { 'prettierd', 'prettier' } }
 return {
   { -- Autoformat
     'stevearc/conform.nvim',
-    lazy = false,
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
     keys = {

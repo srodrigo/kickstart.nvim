@@ -2,6 +2,8 @@ return {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
+    cmd = { 'TSUpdateSync', 'TSUpdate', 'TSInstall' },
+    event = { 'VeryLazy' },
     opts = {
       ensure_installed = { 'bash', 'c', 'c_sharp', 'diff', 'dockerfile', 'json5', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
