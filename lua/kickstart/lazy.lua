@@ -37,21 +37,29 @@ require('lazy').setup({
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
 
+  require 'kickstart.plugins.tokyonight',
+
   require 'kickstart.plugins.sleuth',
 
   require 'kickstart.plugins.surround',
 
-  require 'kickstart.plugins.tokyonight',
-
   require 'kickstart.plugins.lualine',
-
-  require 'kickstart.plugins.gitsigns',
 
   require 'kickstart.plugins.which-key',
 
   require 'kickstart.plugins.neo-tree',
 
   require 'kickstart.plugins.telescope',
+
+  -- Git
+
+  require 'kickstart.plugins.gitsigns',
+
+  require 'kickstart.plugins.fugitive',
+
+  -- IDE
+
+  require 'kickstart.plugins.spectre',
 
   require 'kickstart.plugins.lspconfig',
 
@@ -60,10 +68,6 @@ require('lazy').setup({
   require 'kickstart.plugins.cmp',
 
   require 'kickstart.plugins.treesitter',
-
-  require 'kickstart.plugins.fugitive',
-
-  require 'kickstart.plugins.spectre',
 
   ------------------------
   -- Nice-to-have plugins
@@ -78,9 +82,15 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
+
+  -- IDE
+
   -- require 'kickstart.plugins.debug',
+
   require 'kickstart.plugins.indent_line',
+
   -- require 'kickstart.plugins.lint',
+
   require 'kickstart.plugins.autopairs',
 
   require 'kickstart.plugins.autotag',
