@@ -125,7 +125,6 @@ return {
         "<cmd>lua require'telescope.builtin'.grep_string({ search = '', only_sort_text = true })<cr>",
         { desc = 'Search [t]ext' }
       )
-      vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { buffer = true, desc = 'Search [d]iagnostics' })
       vim.keymap.set('n', '<leader>sD', builtin.diagnostics, { desc = 'Search [D]iagnostics (workspace)' })
       vim.keymap.set('n', '<leader>sm', builtin.marks, { desc = 'Search [m]arks' })
       vim.keymap.set('n', '<leader>so', builtin.vim_options, { desc = 'Search [o]ptions' })
