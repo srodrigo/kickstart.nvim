@@ -67,3 +67,9 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- Folds
+vim.opt.foldmethod = 'indent'
+vim.opt.foldenable = false
+vim.opt.foldlevel = 1
+vim.opt.foldnestmax = 10
