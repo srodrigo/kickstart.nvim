@@ -106,8 +106,8 @@ return {
       vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = 'Find Recent Files ("." for repeat)' })
 
       -- Search - git
-      vim.keymap.set('n', '<leader>gc', builtin.git_commits, { desc = 'Search git [c]ommits history' })
-      vim.keymap.set('n', '<leader>gs', builtin.git_commits, { desc = 'Search git [s]tatus' })
+      vim.keymap.set('n', '<leader>gh', builtin.git_commits, { desc = 'Search git [h]istory' })
+      vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = 'Search git [s]tatus' })
       -- Search - vim
       vim.keymap.set('n', '<leader>s:', builtin.commands, { desc = 'Search Nvim [c]ommands' })
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search Nvim [h]elp' })
