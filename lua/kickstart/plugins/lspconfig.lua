@@ -211,17 +211,6 @@ return {
       --     },
       --   },
       -- }
-      local enabled_servers = {
-        'vtsls',
-        'lua_ls',
-        'html-lsp',
-        'cssls',
-      }
-
-      local enabled_formatters = {
-        'stylua', -- Used to format Lua code
-        'prettierd',
-      }
 
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
@@ -231,34 +220,36 @@ return {
       --  You can press `g?` for help in this menu.
       require('mason').setup()
 
+      local servers = {
+        'vtsls',
+        'lua_ls',
+        'html-lsp',
+        'cssls',
+      }
+
+      local formatters = {
+        'stylua', -- Used to format Lua code
+        'prettierd',
+      }
+
+      local ensure_installed = {}
+      vim.list_extend(ensure_installed, servers)
+      vim.list_extend(ensure_installed, formatters)
+
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
-      local ensure_installed = enabled_servers
-      vim.list_extend(ensure_installed, enabled_formatters)
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
-      require('mason-lspconfig').setup {
-        handlers = {
-          function(server_name)
-            local ok, server = pcall(require, 'kickstart.plugins.lsp.' .. server_name)
-            if ok then
-              -- This handles overriding only values explicitly passed
-              -- by the server configuration above. Useful when disabling
-              -- certain features of an LSP (for example, turning off formatting for tsserver)
-              server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-
-              if server.keys then
-                for _, key in pairs(server.keys) do
-                  vim.keymap.set('n', key[1], key[2], { desc = key.desc })
-                end
-              end
-            else
-              server = {}
-            end
-
-            require('lspconfig')[server_name].setup(server)
-          end,
-        },
+      require('mason-lspconfig').setup_handlers {
+        function(server_name)
+          require('lspconfig')[server_name].setup {
+            capabilities = capabilities,
+          }
+        end,
+        ['lua_ls'] = require('kickstart.plugins.lsp.lua_ls').setup,
+        ['vtsls'] = require('kickstart.plugins.lsp.vtsls').setup, -- typescript
+        ['html'] = require('kickstart.plugins.lsp.html').setup,
+        ['cssls'] = require('kickstart.plugins.lsp.cssls').setup,
       }
     end,
   },
