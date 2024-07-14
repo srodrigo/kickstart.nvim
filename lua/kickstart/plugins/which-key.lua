@@ -36,6 +36,12 @@ return {
           { '<leader>w', group = '[w]indow' },
         },
       },
+      replace = {
+        key = {
+          { '<Space>', '<space>' },
+          { '<Tab>', '<tab>' },
+        },
+      },
     },
   },
 }
