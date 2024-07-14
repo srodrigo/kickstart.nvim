@@ -17,34 +17,26 @@ return {
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VeryLazy',
-    config = function() -- This is the function that runs, AFTER loading
-      require('which-key').setup()
-
-      -- Document existing key chains
-      -- normal mode
-      require('which-key').register {
-        ['<leader>b'] = { name = '[b]uffer', _ = 'which_key_ignore' },
-        ['<leader>c'] = { name = '[c]ode', _ = 'which_key_ignore' },
-        ['<leader>f'] = { name = '[f]ile', _ = 'which_key_ignore' },
-        ['<leader>e'] = { name = 'Tree [e]xplorer', _ = 'which_key_ignore' },
-        ['<leader>g'] = {
-          name = '[g]it',
-          _ = 'which_key_ignore',
-          ['h'] = { name = '[h]unk', _ = 'which_key_ignore' },
+    opts = {
+      icons = {
+        rules = false,
+      },
+      spec = {
+        {
+          mode = { 'n', 'v' },
+          { '<leader><tab>', group = 'tab' },
+          { '<leader>b', group = '[b]uffer' },
+          { '<leader>c', group = '[c]ode' },
+          { '<leader>e', group = 'Tree [e]xplorer' },
+          { '<leader>f', group = '[f]ile' },
+          { '<leader>g', group = '[g]it' },
+          { '<leader>gh', group = '[h]unk' },
+          { '<leader>s', group = '[s]earch' },
+          { '<leader>u', group = '[u]i' },
+          { '<leader>w', group = '[w]indow' },
         },
-        ['<leader>s'] = { name = '[s]earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[w]indow', _ = 'which_key_ignore' },
-        ['<leader><tab>'] = { name = '+tab', _ = 'which_key_ignore' },
-        ['<leader>u'] = { name = '[u]i', _ = 'which_key_ignore' },
-      }
-      -- visual mode
-      require('which-key').register({
-        ['<leader>g'] = {
-          name = '[g]it',
-          ['h'] = { name = '[h]unk' },
-        },
-      }, { mode = 'v' })
-    end,
+      },
+    },
   },
 }
 -- vim: ts=2 sts=2 sw=2 et
