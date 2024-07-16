@@ -26,13 +26,6 @@ return {
       end,
       desc = 'Buffer [e]xplorer',
     },
-    {
-      '<leader>bo',
-      function()
-        require('neo-tree.command').execute { source = 'document_symbols', toggle = true }
-      end,
-      desc = 'Buffer Symbols [o]utline',
-    },
   },
   opts = {
     sources = { 'filesystem', 'buffers', 'git_status', 'document_symbols' },
