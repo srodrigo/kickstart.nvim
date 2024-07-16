@@ -130,7 +130,7 @@ return {
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map('<leader>cs', require('telescope.builtin').lsp_document_symbols, 'Document [s]ymbols Explorer')
+          map('<leader>cs', require('telescope.builtin').lsp_document_symbols, 'Document [s]ymbols')
 
           map('<leader>cO', function()
             require('neo-tree.command').execute { source = 'document_symbols', toggle = true }
