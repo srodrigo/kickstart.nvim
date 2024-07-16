@@ -103,7 +103,12 @@ return {
         "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--ignore-case', '--hidden', '--no-ignore', '-g', '!.git'} })<cr>",
         { desc = 'Find [a]ll Files (hidden/gitignore)' }
       )
-      vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = 'Find Recent Files ("." for repeat)' })
+      vim.keymap.set(
+        'n',
+        '<leader>f.',
+        "<cmd>lua require'telescope.builtin'.oldfiles({ only_cwd = true })<cr>",
+        { desc = 'Find Recent Files ("." for repeat)' }
+      )
 
       -- Search - git
       vim.keymap.set('n', '<leader>gh', builtin.git_commits, { desc = 'Search git [h]istory' })
