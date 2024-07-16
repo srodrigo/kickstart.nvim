@@ -30,6 +30,11 @@ local function toggle_diagnostics()
   end
 end
 
+vim.g.format_on_save = true
+local function toggle_format_on_save()
+  vim.g.format_on_save = not vim.g.format_on_save
+end
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -132,4 +137,7 @@ map('n', '<leader>ud', function()
 end, { desc = 'Toggle [d]iagnostics' })
 
 map('n', '<leader>ub', '<cmd>Gitsigns toggle_current_line_blame<cr>', { desc = 'Toggle Git Line [b]lame' })
-map('n', '<leader>uD', '<cmd>Gitsigns toggle_deleted<cr>', { desc = 'Toggle Git show [D]eleted' })
+map('n', '<leader>uD', '<cmd>Gitsigns toggle_deleted<cr>', { desc = 'Toggle Git Show [D]eleted' })
+map('n', '<leader>uf', function()
+  toggle_format_on_save()
+end, { desc = 'Toggle [f]ormat on Save' })
