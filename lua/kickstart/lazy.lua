@@ -69,6 +69,8 @@ require('lazy').setup({
 
   require 'kickstart.plugins.treesitter',
 
+  require 'kickstart.plugins.omnisharp-extended-lsp',
+
   ------------------------
   -- Nice-to-have plugins
   ------------------------

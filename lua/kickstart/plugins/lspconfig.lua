@@ -1,3 +1,21 @@
+local servers = {
+  'vtsls',
+  'lua_ls',
+  'html',
+  'cssls',
+  'omnisharp',
+}
+
+local formatters = {
+  'stylua', -- Used to format Lua code
+  'prettierd',
+  'csharpier',
+}
+
+local ensure_installed = {}
+vim.list_extend(ensure_installed, servers)
+vim.list_extend(ensure_installed, formatters)
+
 return {
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -14,7 +32,11 @@ return {
 
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
+      -- TODO: remove or migrate to lazydev
       { 'folke/neodev.nvim', opts = {} },
+
+      -- csharp
+      { 'Hoffs/omnisharp-extended-lsp.nvim', lazy = true },
     },
     opts = function()
       return {
@@ -104,7 +126,7 @@ return {
           --  Useful when you're not sure what type a variable is and you want to see
           --  the definition of its *type*, not where it was *defined*.
           -- TODO: Maybe change this to gt
-          map('gD', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+          map('gD', require('telescope.builtin').lsp_type_definitions, 'Goto Type [D]efinition')
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
@@ -218,27 +240,13 @@ return {
       --    :Mason
       --
       --  You can press `g?` for help in this menu.
+
       require('mason').setup()
-
-      local servers = {
-        'vtsls',
-        'lua_ls',
-        'html-lsp',
-        'cssls',
-      }
-
-      local formatters = {
-        'stylua', -- Used to format Lua code
-        'prettierd',
-      }
-
-      local ensure_installed = {}
-      vim.list_extend(ensure_installed, servers)
-      vim.list_extend(ensure_installed, formatters)
 
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+      -- require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+      require('mason-lspconfig').setup { ensure_installed = servers }
 
       require('mason-lspconfig').setup_handlers {
         function(server_name)
@@ -250,6 +258,7 @@ return {
         ['vtsls'] = require('kickstart.plugins.lsp.vtsls').setup, -- typescript
         ['html'] = require('kickstart.plugins.lsp.html').setup,
         ['cssls'] = require('kickstart.plugins.lsp.cssls').setup,
+        ['omnisharp'] = require('kickstart.plugins.lsp.omnisharp').setup,
       }
     end,
   },

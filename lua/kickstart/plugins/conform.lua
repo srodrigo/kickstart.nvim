@@ -21,9 +21,9 @@ return {
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true }
+        local disable_filetypes = { c = true, cpp = true, cs = true }
         return {
-          timeout_ms = 500,
+          timeout_ms = 1000,
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
         }
       end,
@@ -34,6 +34,7 @@ return {
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
+        cs = { 'csharpier' },
         css = prettier_formatters,
         graphql = prettier_formatters,
         handlebars = prettier_formatters,
@@ -55,6 +56,10 @@ return {
       formatters = {
         shfmt = {
           prepend_args = { '-i', '2' },
+        },
+        csharpier = {
+          command = 'dotnet-csharpier',
+          args = { '--write-stdout' },
         },
       },
     },
