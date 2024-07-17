@@ -79,6 +79,7 @@ return {
             end,
             desc = 'Open with System File Brower',
           },
+          ['Z'] = 'expand_all_nodes',
         },
       },
       default_component_configs = {
@@ -87,6 +88,19 @@ return {
           expander_collapsed = '',
           expander_expanded = '',
           expander_highlight = 'NeoTreeExpander',
+        },
+      },
+    },
+    document_symbols = {
+      window = {
+        mappings = {
+          ['<cr>'] = 'jump_to_symbol',
+          ['o'] = 'toggle_node',
+          ['l'] = 'toggle_node',
+          ['h'] = 'close_node',
+          ['/'] = 'filter',
+          ['z'] = 'close_all_nodes',
+          ['Z'] = 'expand_all_nodes',
         },
       },
     },
