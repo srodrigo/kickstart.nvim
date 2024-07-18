@@ -1,4 +1,4 @@
-local colorscheme = 'dawnfox'
+local colorscheme = 'nordbones'
 
 local priority = 1000 -- Make sure to load this before all the other start plugins.
 
@@ -60,6 +60,18 @@ local all_colorschemes = {
       vim.o.background = 'dark' -- or light
     end,
   },
+  nordbones = {
+    'zenbones-theme/zenbones.nvim',
+    dependencies = {
+      'rktjmp/lush.nvim',
+    },
+    priority = priority,
+    init = function()
+      vim.cmd.colorscheme 'nordbones'
+      vim.o.background = 'light' -- or light
+      vim.cmd 'highlight Normal guibg=#2D303C'
+    end,
+  },
   nightfox = {
     'EdenEast/nightfox.nvim',
     priority = priority,
@@ -67,11 +79,39 @@ local all_colorschemes = {
       vim.cmd.colorscheme 'nightfox'
     end,
   },
+  nordfox = {
+    'EdenEast/nightfox.nvim',
+    priority = priority,
+    init = function()
+      vim.cmd.colorscheme 'nordfox'
+    end,
+  },
   dawnfox = {
     'EdenEast/nightfox.nvim',
     priority = priority,
     init = function()
       vim.cmd.colorscheme 'dawnfox'
+    end,
+  },
+  ['no-clown-fiesta'] = {
+    'aktersnurra/no-clown-fiesta.nvim',
+    priority = priority,
+    init = function()
+      vim.cmd.colorscheme 'no-clown-fiesta'
+    end,
+  },
+  nord1 = {
+    'shaunsingh/nord.nvim',
+    priority = priority,
+    init = function()
+      vim.cmd.colorscheme 'nord'
+    end,
+  },
+  nord2 = {
+    'gbprod/nord.nvim',
+    priority = priority,
+    init = function()
+      vim.cmd.colorscheme 'nord'
     end,
   },
 }
