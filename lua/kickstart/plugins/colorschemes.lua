@@ -21,45 +21,6 @@ local all_colorschemes = {
       vim.cmd.colorscheme 'tokyonight-moon'
     end,
   },
-  nordic = {
-    'AlexvZyl/nordic.nvim',
-    priority = priority,
-    config = function()
-      vim.cmd.colorscheme 'nordic'
-    end,
-  },
-  iceberg = {
-    'cocopon/iceberg.vim',
-    priority = priority,
-    init = function()
-      vim.cmd.colorscheme 'iceberg'
-    end,
-  },
-  base16 = {
-    'tinted-theming/base16-vim',
-    priority = priority,
-    init = function()
-      vim.cmd.colorscheme 'base16-classic-dark'
-    end,
-  },
-  poimandres = {
-    'olivercederborg/poimandres.nvim',
-    priority = priority,
-    init = function()
-      vim.cmd.colorscheme 'poimandres'
-    end,
-  },
-  forestbones = {
-    'zenbones-theme/zenbones.nvim',
-    dependencies = {
-      'rktjmp/lush.nvim',
-    },
-    priority = priority,
-    init = function()
-      vim.cmd.colorscheme 'forestbones'
-      vim.o.background = 'dark' -- or light
-    end,
-  },
   nordbones = {
     'zenbones-theme/zenbones.nvim',
     dependencies = {
@@ -72,46 +33,11 @@ local all_colorschemes = {
       vim.cmd 'highlight Normal guibg=#2D303C'
     end,
   },
-  nightfox = {
-    'EdenEast/nightfox.nvim',
-    priority = priority,
-    init = function()
-      vim.cmd.colorscheme 'nightfox'
-    end,
-  },
-  nordfox = {
-    'EdenEast/nightfox.nvim',
-    priority = priority,
-    init = function()
-      vim.cmd.colorscheme 'nordfox'
-    end,
-  },
   dawnfox = {
     'EdenEast/nightfox.nvim',
     priority = priority,
     init = function()
       vim.cmd.colorscheme 'dawnfox'
-    end,
-  },
-  ['no-clown-fiesta'] = {
-    'aktersnurra/no-clown-fiesta.nvim',
-    priority = priority,
-    init = function()
-      vim.cmd.colorscheme 'no-clown-fiesta'
-    end,
-  },
-  nord1 = {
-    'shaunsingh/nord.nvim',
-    priority = priority,
-    init = function()
-      vim.cmd.colorscheme 'nord'
-    end,
-  },
-  nord2 = {
-    'gbprod/nord.nvim',
-    priority = priority,
-    init = function()
-      vim.cmd.colorscheme 'nord'
     end,
   },
 }
