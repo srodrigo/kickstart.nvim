@@ -29,7 +29,7 @@ local all_colorschemes = {
     priority = priority,
     init = function()
       vim.cmd.colorscheme 'nordbones'
-      vim.o.background = 'light' -- or light
+      vim.o.background = 'dark' -- or light
       vim.cmd 'highlight Normal guibg=#2D303C'
     end,
   },
