@@ -97,7 +97,7 @@ require('lazy').setup({
 
   require 'kickstart.plugins.autotag',
 
-  require 'kickstart.plugins.rainbow-parentheses',
+  -- require 'kickstart.plugins.rainbow-parentheses',
 
   require 'kickstart.plugins.todo-comments',
 
