@@ -33,6 +33,14 @@ local all_colorschemes = {
       vim.cmd 'highlight Normal guibg=#2D303C'
     end,
   },
+  nord = {
+    'gbprod/nord.nvim',
+    priority = priority,
+    init = function()
+      vim.cmd.colorscheme 'nord'
+      vim.cmd 'highlight Normal guibg=#2D303C'
+    end,
+  },
   dawnfox = {
     'EdenEast/nightfox.nvim',
     priority = priority,
