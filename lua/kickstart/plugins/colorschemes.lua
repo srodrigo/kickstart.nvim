@@ -39,6 +39,9 @@ local all_colorschemes = {
     init = function()
       vim.cmd.colorscheme 'nord'
       vim.cmd 'highlight Normal guibg=#2D303C'
+      -- For vim-fugitive
+      vim.cmd.hi 'diffAdded guifg=#A3BE8C guibg=NONE gui=NONE'
+      vim.cmd.hi 'diffRemoved guifg=#BF616A guibg=NONE gui=NONE'
     end,
   },
   dawnfox = {
