@@ -1,4 +1,4 @@
-local colorscheme = 'nordbones'
+local colorscheme = 'nord'
 
 local priority = 1000 -- Make sure to load this before all the other start plugins.
 
