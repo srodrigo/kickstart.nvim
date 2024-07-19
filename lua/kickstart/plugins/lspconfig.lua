@@ -185,9 +185,9 @@ return {
             })
           end
 
-          if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint and not vim.lsp.inlay_hint.is_enabled() then
-            vim.lsp.inlay_hint.enable()
-          end
+          -- if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint and not vim.lsp.inlay_hint.is_enabled() then
+          --   vim.lsp.inlay_hint.enable()
+          -- end
         end,
       })
 
