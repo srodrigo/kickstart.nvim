@@ -35,6 +35,26 @@ local function toggle_format_on_save()
   vim.g.format_on_save = not vim.g.format_on_save
 end
 
+local function open_buffer_diagnostics_on_quickfix()
+  local qflist = {}
+
+  local diagnostics = vim.diagnostic.get()
+  for _, diag in ipairs(diagnostics) do
+    if vim.fn.bufnr '%' == diag.bufnr then
+      table.insert(qflist, {
+        bufnr = diag.bufnr,
+        lnum = diag.lnum + 1,
+        col = diag.col + 1,
+        text = diag.message,
+        severity = diag.severity,
+      })
+    end
+  end
+
+  vim.fn.setqflist(qflist, 'r')
+  vim.cmd.copen()
+end
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -49,7 +69,7 @@ map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to Previous [d]iagnostic message' })
 map('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to Next [d]iagnostic message' })
 map('n', '<leader>cd', vim.diagnostic.open_float, { desc = 'Line [d]iagnostics' })
-map('n', '<leader>cq', vim.diagnostic.setloclist, { desc = 'Diagnostic [q]uickfix list' })
+map('n', '<leader>cq', open_buffer_diagnostics_on_quickfix, { desc = 'Diagnostic [q]uickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
