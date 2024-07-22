@@ -72,7 +72,8 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 -- Folds
-vim.opt.foldmethod = 'indent'
-vim.opt.foldenable = false
-vim.opt.foldlevel = 1
-vim.opt.foldnestmax = 10
+vim.o.foldenable = false
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 1
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
