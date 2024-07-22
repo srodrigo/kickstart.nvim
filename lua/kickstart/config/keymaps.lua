@@ -87,6 +87,9 @@ map('n', '<M-Down>', '<cmd>resize -2<cr>', { desc = 'Decrease Window Height' })
 map('n', '<M-Left>', '<cmd>vertical resize -2<cr>', { desc = 'Decrease Window Width' })
 map('n', '<M-Right>', '<cmd>vertical resize +2<cr>', { desc = 'Increase Window Width' })
 
+-- Back to Normal mode
+map('i', 'jk', '<esc>')
+
 -- Buffers
 map('n', '[b', '<cmd>bprevious<cr>', { desc = 'Prev Buffer' })
 map('n', ']b', '<cmd>bnext<cr>', { desc = 'Next Buffer' })
