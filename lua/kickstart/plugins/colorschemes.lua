@@ -44,11 +44,15 @@ local all_colorschemes = {
       vim.cmd.hi 'diffRemoved guifg=#BF616A guibg=NONE gui=NONE'
     end,
   },
-  dawnfox = {
-    'EdenEast/nightfox.nvim',
+  ['zenbones-dim'] = {
+    'zenbones-theme/zenbones.nvim',
+    dependencies = {
+      'rktjmp/lush.nvim',
+    },
     priority = priority,
     init = function()
-      vim.cmd.colorscheme 'dawnfox'
+      vim.cmd.colorscheme 'zenbones'
+      vim.o.background = 'light'
     end,
   },
 }
