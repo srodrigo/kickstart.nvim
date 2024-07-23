@@ -24,7 +24,6 @@ return {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
       'williamboman/mason-lspconfig.nvim',
-      'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -247,9 +246,6 @@ return {
 
       require('mason').setup()
 
-      -- You can add other tools here that you want Mason to install
-      -- for you, so that they are available from within Neovim.
-      -- require('mason-tool-installer').setup { ensure_installed = ensure_installed }
       require('mason-lspconfig').setup { ensure_installed = servers }
 
       require('mason-lspconfig').setup_handlers {
