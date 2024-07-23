@@ -68,7 +68,9 @@ return {
         map('n', '<leader>ghR', gitsigns.reset_buffer, { desc = 'Git [R]eset buffer' })
         map('n', '<leader>ghp', gitsigns.preview_hunk, { desc = 'Git [p]review hunk' })
         map('n', '<leader>ghb', gitsigns.blame_line, { desc = 'Git [b]lame line' })
+        -- TODO: Candidate for removal
         map('n', '<leader>ghd', gitsigns.diffthis, { desc = 'Git [d]iff against index' })
+        -- TODO: Candidate for removal
         map('n', '<leader>ghD', function()
           gitsigns.diffthis '@'
         end, { desc = 'Git [D]iff against last commit' })
