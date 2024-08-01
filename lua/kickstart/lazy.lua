@@ -39,17 +39,17 @@ require('lazy').setup({
 
   require 'kickstart.plugins.colorschemes',
 
+  require 'kickstart.plugins.telescope',
+
   require 'kickstart.plugins.sleuth',
 
   require 'kickstart.plugins.surround',
 
+  require 'kickstart.plugins.neo-tree',
+
   require 'kickstart.plugins.lualine',
 
   require 'kickstart.plugins.which-key',
-
-  require 'kickstart.plugins.neo-tree',
-
-  require 'kickstart.plugins.telescope',
 
   -- Git
 
@@ -100,6 +100,10 @@ require('lazy').setup({
   -- require 'kickstart.plugins.rainbow-parentheses',
 
   -- require 'kickstart.plugins.todo-comments',
+
+  require 'kickstart.plugins.copilot-cmp',
+
+  require 'kickstart.plugins.copilot-chat',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
