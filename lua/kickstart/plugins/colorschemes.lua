@@ -2,6 +2,8 @@ local colorscheme = 'nord'
 
 local priority = 1000 -- Make sure to load this before all the other start plugins.
 
+local nordBackground = '#2D303C'
+
 -- You can configure highlights by doing something like:
 vim.cmd.hi 'Comment gui=none'
 
@@ -30,7 +32,7 @@ local all_colorschemes = {
     init = function()
       vim.cmd.colorscheme 'nordbones'
       vim.o.background = 'dark' -- or light
-      vim.cmd 'highlight Normal guibg=#2D303C'
+      vim.cmd('highlight Normal guibg=' .. nordBackground)
     end,
   },
   nord = {
@@ -43,7 +45,7 @@ local all_colorschemes = {
     opts = {
       diff = { mode = 'fg' },
       on_highlights = function(highlights, _)
-        highlights.Normal.bg = '#2D303C'
+        highlights.Normal.bg = nordBackground
         highlights.DiffAdd.bg = 'NONE'
         highlights.DiffDelete.bg = 'NONE'
       end,
