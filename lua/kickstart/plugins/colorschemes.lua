@@ -38,11 +38,16 @@ local all_colorschemes = {
     priority = priority,
     init = function()
       vim.cmd.colorscheme 'nord'
-      vim.cmd 'highlight Normal guibg=#2D303C'
       -- For vim-fugitive
-      vim.cmd.hi 'diffAdded guifg=#A3BE8C guibg=NONE gui=NONE'
-      vim.cmd.hi 'diffRemoved guifg=#BF616A guibg=NONE gui=NONE'
     end,
+    opts = {
+      diff = { mode = 'fg' },
+      on_highlights = function(highlights, _)
+        highlights.Normal.bg = '#2D303C'
+        highlights.DiffAdd.bg = 'NONE'
+        highlights.DiffDelete.bg = 'NONE'
+      end,
+    },
   },
   ['zenbones-dim'] = {
     'zenbones-theme/zenbones.nvim',
