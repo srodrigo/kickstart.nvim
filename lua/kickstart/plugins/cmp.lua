@@ -34,6 +34,30 @@ return {
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      {
+        'zbirenbaum/copilot-cmp',
+        dependencies = {
+          {
+            'zbirenbaum/copilot.lua',
+            cmd = 'Copilot',
+            build = ':Copilot auth',
+            opts = {
+              suggestion = { enabled = false },
+              panel = { enabled = false },
+              filetypes = {
+                markdown = true,
+                help = true,
+              },
+            },
+          },
+        },
+        config = function()
+          require('copilot_cmp').setup {
+            suggestion = { enabled = false },
+            panel = { enabled = false },
+          }
+        end,
+      },
     },
     config = function()
       -- See `:help cmp`

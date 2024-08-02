@@ -101,8 +101,6 @@ require('lazy').setup({
 
   -- require 'kickstart.plugins.todo-comments',
 
-  require 'kickstart.plugins.copilot-cmp',
-
   require 'kickstart.plugins.copilot-chat',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
