@@ -95,6 +95,9 @@ return {
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
 
+      -- Buffers
+      vim.keymap.set('n', '<leader>bb', '<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>', { desc = 'Search [b]uffers' })
+
       -- Files
       vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find [f]iles' })
       vim.keymap.set(
@@ -143,7 +146,8 @@ return {
       -- Search - diagnostics
       vim.keymap.set('n', '<leader>sD', builtin.diagnostics, { desc = 'Search [D]iagnostics (Workspace)' })
       -- Search - buffers
-      vim.keymap.set('n', '<leader><leader>', '<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>', { desc = '[ ] Search Buffers' })
+      -- vim.keymap.set('n', '<leader><leader>', '<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>', { desc = '[ ] Search Buffers' })
+      vim.keymap.set('n', '<leader><leader>', builtin.find_files, { desc = '[ ] Find Files' })
       -- Search - resume
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Search [r]esume' })
       -- Search - Neovim configuration files
