@@ -146,11 +146,11 @@ map({ 'n', 't' }, '<C-\\>', '<cmd>TermToggleVertical<cr>', { desc = 'Toggle Term
 map({ 'n', 't' }, '<C-/>', '<cmd>TermToggleHorizontal<cr>', { desc = 'Toggle Terminal Horizontal', silent = true })
 
 -- Tabs
-map('n', '<leader><tab>o', '<cmd>tabonly<cr>', { desc = 'Close Other Tabs' })
+map('n', '<leader><tab>o', '<cmd>tabonly<cr>', { desc = 'Close [o]ther Tabs' })
 map('n', '<leader><tab><tab>', '<cmd>tabnew<cr>', { desc = 'New Tab' })
 map('n', '<leader><tab>]', '<cmd>tabnext<cr>', { desc = 'Next Tab' })
 map('n', '<leader><tab>[', '<cmd>tabprevious<cr>', { desc = 'Previous Tab' })
-map('n', '<leader><tab>d', '<cmd>tabclose<cr>', { desc = 'Close Tab' })
+map('n', '<leader><tab>d', '<cmd>tabclose<cr>', { desc = '[d]elete (Close) Tab' })
 map('n', ']<tab>', '<cmd>tabnext<cr>', { desc = 'Next Tab' })
 map('n', '[<tab>', '<cmd>tabprevious<cr>', { desc = 'Previous Tab' })
 
