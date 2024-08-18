@@ -44,7 +44,7 @@ return {
         end
 
         -- Navigation
-        map('n', ']h', function()
+        map('n', ']c', function()
           if vim.wo.diff then
             vim.cmd.normal { ']c', bang = true }
           else
@@ -52,7 +52,7 @@ return {
           end
         end, { desc = 'Next git [h]unk' })
 
-        map('n', '[h', function()
+        map('n', '[c', function()
           if vim.wo.diff then
             vim.cmd.normal { '[c', bang = true }
           else
