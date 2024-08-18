@@ -68,6 +68,12 @@ map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to Previous [d]iagnostic message' })
 map('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to Next [d]iagnostic message' })
+map('n', '[e', function()
+  vim.diagnostic.goto_prev { severity = vim.diagnostic.severity.ERROR }
+end, { desc = 'Go to Previous [e]rror message' })
+map('n', ']e', function()
+  vim.diagnostic.goto_next { severity = vim.diagnostic.severity.ERROR }
+end, { desc = 'Go to Next [e]rror message' })
 map('n', '<leader>cd', vim.diagnostic.open_float, { desc = 'Line [d]iagnostics' })
 map('n', '<leader>cq', open_buffer_diagnostics_on_quickfix, { desc = 'Diagnostic [q]uickfix list' })
 
