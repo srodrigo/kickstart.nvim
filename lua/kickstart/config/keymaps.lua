@@ -119,7 +119,7 @@ map('i', 'jk', '<esc>')
 -- Buffers
 map('n', '[b', '<cmd>bprevious<cr>', { desc = 'Prev Buffer' })
 map('n', ']b', '<cmd>bnext<cr>', { desc = 'Next Buffer' })
-map('n', '<leader>bb', '<cmd>e #<cr>', { desc = 'Switch to Other [b]uffer' })
+-- map('n', '<leader>bb', '<cmd>e #<cr>', { desc = 'Switch to Other [b]uffer' })
 map('n', '<leader>bd', '<cmd>:bp | sp | bn | bd<cr>', { desc = '[d]elete Buffer' })
 map('n', '<leader>bD', '<cmd>:bd<cr>', { desc = '[D]elete Buffer and Window' })
 
