@@ -44,7 +44,7 @@ return {
         mode = { 'n', 'v' },
       },
       {
-        '<leader>ac',
+        '<leader>aR',
         '<cmd>CopilotChatReset<cr>',
         desc = '[R]eset Copilot Chat',
         mode = { 'n', 'v' },
