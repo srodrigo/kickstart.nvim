@@ -8,7 +8,19 @@ return {
   'nvim-pack/nvim-spectre',
   build = false,
   cmd = 'Spectre',
-  opts = { open_cmd = 'noswapfile vnew' },
+  opts = {
+    open_cmd = 'noswapfile vnew',
+    replace_engine = {
+      ['sed'] = {
+        cmd = 'sed',
+        args = {
+          '-i',
+          '',
+          '-E',
+        },
+      },
+    },
+  },
   -- stylua: ignore
   keys = {
     { "<leader>sR", function() require("spectre").open() end, desc = "Search & [R]eplace in Files (Spectre)" },
