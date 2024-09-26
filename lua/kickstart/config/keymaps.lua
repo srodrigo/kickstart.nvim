@@ -55,6 +55,18 @@ local function open_buffer_diagnostics_on_quickfix()
   vim.cmd.copen()
 end
 
+local function delete_all_other_buffers()
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if
+      vim.api.nvim_get_option_value('buflisted', { buf = buf })
+      and not vim.api.nvim_get_option_value('modified', { buf = buf })
+      and buf ~= vim.api.nvim_get_current_buf()
+    then
+      vim.api.nvim_buf_delete(buf, {})
+    end
+  end
+end
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -119,9 +131,8 @@ map('i', 'jk', '<esc>')
 -- Buffers
 map('n', '[b', '<cmd>bprevious<cr>', { desc = 'Prev Buffer' })
 map('n', ']b', '<cmd>bnext<cr>', { desc = 'Next Buffer' })
--- map('n', '<leader>bb', '<cmd>e #<cr>', { desc = 'Switch to Other [b]uffer' })
 map('n', '<leader>bd', '<cmd>:bp | sp | bn | bd<cr>', { desc = '[d]elete Buffer' })
-map('n', '<leader>bD', '<cmd>:bd<cr>', { desc = '[D]elete Buffer and Window' })
+map('n', '<leader>bD', delete_all_other_buffers, { desc = '[D]elete All Other Buffers', silent = true })
 
 -- Better indenting
 map('v', '<', '<gv')
