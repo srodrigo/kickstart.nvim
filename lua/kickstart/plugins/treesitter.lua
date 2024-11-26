@@ -5,7 +5,24 @@ return {
     cmd = { 'TSUpdateSync', 'TSUpdate', 'TSInstall' },
     event = { 'VeryLazy' },
     opts = {
-      ensure_installed = { 'bash', 'c', 'c_sharp', 'diff', 'dockerfile', 'json5', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
+      ensure_installed = {
+        'bash',
+        'c',
+        'c_sharp',
+        'diff',
+        'dockerfile',
+        'json5',
+        'html',
+        'lua',
+        'luadoc',
+        'markdown',
+        'vim',
+        'vimdoc',
+        'go',
+        'gomod',
+        'gowork',
+        'gosum',
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {

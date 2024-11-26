@@ -71,6 +71,8 @@ require('lazy').setup({
 
   require 'kickstart.plugins.omnisharp-extended-lsp',
 
+  require 'kickstart.plugins.go',
+
   ------------------------
   -- Nice-to-have plugins
   ------------------------

@@ -39,6 +39,7 @@ return {
         -- is found.
         cs = { 'csharpier' },
         css = prettier_formatters,
+        go = { 'goimports', 'gofumpt' },
         graphql = prettier_formatters,
         handlebars = prettier_formatters,
         html = prettier_formatters,

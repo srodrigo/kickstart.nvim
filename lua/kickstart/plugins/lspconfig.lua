@@ -4,6 +4,7 @@ local servers = {
   'html',
   'cssls',
   'omnisharp',
+  'gopls',
 }
 
 local formatters = {
@@ -259,6 +260,7 @@ return {
         ['html'] = require('kickstart.plugins.lsp.html').setup,
         ['cssls'] = require('kickstart.plugins.lsp.cssls').setup,
         ['omnisharp'] = require('kickstart.plugins.lsp.omnisharp').setup,
+        ['gopls'] = require('kickstart.plugins.lsp.gopls').setup,
       }
     end,
   },
