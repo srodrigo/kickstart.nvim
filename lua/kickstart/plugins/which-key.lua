@@ -31,7 +31,6 @@ return {
           { '<leader>e', group = 'Tree [e]xplorer' },
           { '<leader>f', group = '[f]ile' },
           { '<leader>g', group = '[g]it' },
-          { '<leader>gh', group = '[h]unk' },
           { '<leader>s', group = '[s]earch' },
           { '<leader>u', group = '[u]i' },
           { '<leader>w', group = '[w]indow' },
