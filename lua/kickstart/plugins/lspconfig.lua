@@ -113,24 +113,29 @@ return {
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
-          map('gd', require('telescope.builtin').lsp_definitions, 'Goto [d]efinition')
+          -- map('gd', require('telescope.builtin').lsp_definitions, 'Goto [d]efinition')
+          map('gd', require('fzf-lua').lsp_definitions, 'Goto [d]efinition')
 
           -- Find references for the word under your cursor.
-          map('gr', require('telescope.builtin').lsp_references, 'Goto [r]eferences')
+          -- map('gr', require('telescope.builtin').lsp_references, 'Goto [r]eferences')
+          map('gr', require('fzf-lua').lsp_references, 'Goto [r]eferences')
 
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
-          map('gI', require('telescope.builtin').lsp_implementations, 'Goto [I]mplementation')
+          -- map('gI', require('telescope.builtin').lsp_implementations, 'Goto [I]mplementation')
+          map('gI', require('fzf-lua').lsp_implementations, 'Goto [I]mplementation')
 
           -- Jump to the type of the word under your cursor.
           --  Useful when you're not sure what type a variable is and you want to see
           --  the definition of its *type*, not where it was *defined*.
           -- TODO: Maybe change this to gt
-          map('gD', require('telescope.builtin').lsp_type_definitions, 'Goto Type [D]efinition')
+          -- map('gD', require('telescope.builtin').lsp_type_definitions, 'Goto Type [D]efinition')
+          map('gD', require('fzf-lua').lsp_typedefs, 'Goto Type [D]efinition')
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map('<leader>cs', require('telescope.builtin').lsp_document_symbols, 'Document [s]ymbols')
+          -- map('<leader>cs', require('telescope.builtin').lsp_document_symbols, 'Document [s]ymbols')
+          map('<leader>cs', require('fzf-lua').lsp_document_symbols, 'Document [s]ymbols')
 
           map('<leader>cO', function()
             require('neo-tree.command').execute { source = 'document_symbols', toggle = true }

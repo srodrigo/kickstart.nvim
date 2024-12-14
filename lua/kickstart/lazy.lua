@@ -39,7 +39,9 @@ require('lazy').setup({
 
   require 'kickstart.plugins.colorschemes',
 
-  require 'kickstart.plugins.telescope',
+  -- require 'kickstart.plugins.telescope',
+
+  require 'kickstart.plugins.fzf-lua',
 
   require 'kickstart.plugins.sleuth',
 
