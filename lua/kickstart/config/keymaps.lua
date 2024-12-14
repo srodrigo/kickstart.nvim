@@ -9,6 +9,12 @@ local function toggle_inlay_hints(buf, value)
       value = not ih.is_enabled { bufnr = buf or 0 }
     end
     ih.enable(value, { bufnr = buf })
+
+    if value then
+      vim.notify 'Inlay Hints enabled'
+    else
+      vim.notify 'Inlay Hints disabled'
+    end
   end
 end
 
@@ -25,14 +31,22 @@ local function toggle_diagnostics()
 
   if diagnostics_enabled then
     vim.diagnostic.enable()
+    vim.notify 'Diagnostics enabled'
   else
     vim.diagnostic.disable()
+    vim.notify 'Diagnostics disabled'
   end
 end
 
 vim.g.format_on_save = true
 local function toggle_format_on_save()
   vim.g.format_on_save = not vim.g.format_on_save
+
+  if vim.g.format_on_save then
+    vim.notify 'Format On Save enabled'
+  else
+    vim.notify 'Format On Save disabled'
+  end
 end
 
 local function open_buffer_diagnostics_on_quickfix()
@@ -120,6 +134,7 @@ map('n', '<C-Up>', '<cmd>resize +2<cr>', { desc = 'Increase Window Height' })
 map('n', '<C-Down>', '<cmd>resize -2<cr>', { desc = 'Decrease Window Height' })
 map('n', '<C-Left>', '<cmd>vertical resize -2<cr>', { desc = 'Decrease Window Width' })
 map('n', '<C-Right>', '<cmd>vertical resize +2<cr>', { desc = 'Increase Window Width' })
+-- Resize window using <M> arrow keys
 map('n', '<M-Up>', '<cmd>resize +2<cr>', { desc = 'Increase Window Height' })
 map('n', '<M-Down>', '<cmd>resize -2<cr>', { desc = 'Decrease Window Height' })
 map('n', '<M-Left>', '<cmd>vertical resize -2<cr>', { desc = 'Decrease Window Width' })
