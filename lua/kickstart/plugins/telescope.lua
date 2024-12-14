@@ -140,6 +140,7 @@ return {
         "<cmd>lua require'telescope.builtin'.grep_string({ search = '', only_sort_text = true })<cr>",
         { desc = 'Search [t]ext Only' }
       )
+      -- Candidate for removal
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = 'Search Current [w]ord' })
       -- Search - Telescope
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = 'Search [s]elect Telescope' })

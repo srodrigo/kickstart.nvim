@@ -89,8 +89,6 @@ vim.opt.hlsearch = true
 
 local map = vim.keymap.set
 
-map('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
 -- Diagnostic keymaps
 map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to Previous [d]iagnostic message' })
 map('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to Next [d]iagnostic message' })
@@ -126,8 +124,6 @@ map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 map('n', '<C-w>m', '<C-w>|<C-w>_', { desc = 'Maximise Window' })
-map('n', '<leader>wm', '<C-w>|<C-w>_', { desc = '[m]aximise Window' })
-map('n', '<leader>w=', '<C-w>=', { desc = '[=]lise Windows' })
 
 -- Resize window using <ctrl> arrow keys
 map('n', '<C-Up>', '<cmd>resize +2<cr>', { desc = 'Increase Window Height' })
