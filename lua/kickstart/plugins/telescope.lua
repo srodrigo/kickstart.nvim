@@ -114,8 +114,8 @@ return {
       )
 
       -- Search - git
+      vim.keymap.set('n', '<leader>gg', builtin.git_status, { desc = 'Search [g]it status' })
       vim.keymap.set('n', '<leader>gh', builtin.git_commits, { desc = 'Search git [h]istory' })
-      vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = 'Search git [s]tatus' })
       -- Search - vim
       vim.keymap.set('n', '<leader>s:', builtin.commands, { desc = 'Search Nvim commands [:]' })
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search Nvim [h]elp' })

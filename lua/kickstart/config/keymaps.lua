@@ -159,7 +159,9 @@ map({ 'n', 't' }, '<C-/>', '<cmd>TermToggleHorizontal<cr>', { desc = 'Toggle Ter
 -- Tabs
 map('n', '<leader><tab>o', '<cmd>tabonly<cr>', { desc = 'Close [o]ther Tabs' })
 map('n', '<leader><tab><tab>', '<cmd>tabnew<cr>', { desc = 'New Tab' })
+-- TODO: Candidate for removal
 map('n', '<leader><tab>]', '<cmd>tabnext<cr>', { desc = 'Next Tab' })
+-- TODO: Candidate for removal
 map('n', '<leader><tab>[', '<cmd>tabprevious<cr>', { desc = 'Previous Tab' })
 map('n', '<leader><tab>d', '<cmd>tabclose<cr>', { desc = '[d]elete (Close) Tab' })
 map('n', ']<tab>', '<cmd>tabnext<cr>', { desc = 'Next Tab' })

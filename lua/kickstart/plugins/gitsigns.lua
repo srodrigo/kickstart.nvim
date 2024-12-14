@@ -61,19 +61,13 @@ return {
         end, { desc = 'Prev git [h]unk' })
 
         -- Actions
-        map({ 'n', 'v' }, '<leader>ghs', gitsigns.stage_hunk, { desc = 'Git [s]tage hunk' })
-        map({ 'n', 'v' }, '<leader>ghr', gitsigns.reset_hunk, { desc = 'Git [r]eset hunk' })
-        map('n', '<leader>ghS', gitsigns.stage_buffer, { desc = 'Git [S]tage buffer' })
-        map('n', '<leader>ghu', gitsigns.undo_stage_hunk, { desc = 'Git [u]ndo stage hunk' })
-        map('n', '<leader>ghR', gitsigns.reset_buffer, { desc = 'Git [R]eset buffer' })
-        map('n', '<leader>ghp', gitsigns.preview_hunk, { desc = 'Git [p]review hunk' })
-        map('n', '<leader>ghb', gitsigns.blame_line, { desc = 'Git [b]lame line' })
-        -- TODO: Candidate for removal
-        map('n', '<leader>ghd', gitsigns.diffthis, { desc = 'Git [d]iff against index' })
-        -- TODO: Candidate for removal
-        map('n', '<leader>ghD', function()
-          gitsigns.diffthis '@'
-        end, { desc = 'Git [D]iff against last commit' })
+        map({ 'n', 'v' }, '<leader>gs', gitsigns.stage_hunk, { desc = 'Git [s]tage hunk' })
+        map({ 'n', 'v' }, '<leader>gr', gitsigns.reset_hunk, { desc = 'Git [r]eset hunk' })
+        map('n', '<leader>gS', gitsigns.stage_buffer, { desc = 'Git [S]tage buffer' })
+        map('n', '<leader>gu', gitsigns.undo_stage_hunk, { desc = 'Git [u]ndo stage hunk' })
+        map('n', '<leader>gR', gitsigns.reset_buffer, { desc = 'Git [R]eset buffer' })
+        map('n', '<leader>gp', gitsigns.preview_hunk, { desc = 'Git [p]review hunk' })
+        map('n', '<leader>gb', gitsigns.blame_line, { desc = 'Git [b]lame line' })
         -- text object
         map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'GitSigns Select Hunk' })
       end,
