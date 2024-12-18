@@ -152,6 +152,17 @@ return {
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
           map('<leader>ca', vim.lsp.buf.code_action, 'Code [a]ction', { modes = { 'n', 'v' } })
+          map('<leader>ca', function()
+            require('fzf-lua').lsp_code_actions {
+              winopts = {
+                relative = 'cursor',
+                width = 0.95,
+                height = 0.95,
+                row = 1,
+                preview = { horizontal = 'up:75%', layout = 'horizontal' },
+              },
+            }
+          end, 'Code [a]ction', { modes = { 'n', 'v' } })
 
           -- Opens a popup that displays documentation about the word under your cursor
           --  See `:help K` for why this keymap.

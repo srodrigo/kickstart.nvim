@@ -23,6 +23,25 @@ return {
             ['ctrl-r'] = { actions.toggle_ignore },
           },
         },
+        lsp = {
+          code_actions = {
+            previewer = 'codeaction_native',
+            preview_pager = "delta --side-by-side --width=$FZF_PREVIEW_COLUMNS --hunk-header-style='omit' --file-style='omit'",
+          },
+        },
+        previewers = {
+          codeaction = {
+            -- options for vim.diff(): https://neovim.io/doc/user/lua.html#vim.diff()
+            diff_opts = { ctxlen = 3 },
+          },
+          codeaction_native = {
+            diff_opts = { ctxlen = 3 },
+            -- git-delta is automatically detected as pager, set `pager=false`
+            -- to disable, can also be set under 'lsp.code_actions.preview_pager'
+            -- recommended styling for delta
+            --pager = [[delta --width=$COLUMNS --hunk-header-style="omit" --file-style="omit"]],
+          },
+        },
 
         -- Buffers
         vim.keymap.set('n', '<leader>bb', '<cmd>FzfLua buffers<cr>', { desc = 'Search [b]uffers' }),
