@@ -10,6 +10,9 @@ return {
         winopts = {
           height = 0.95,
           width = 0.95,
+          preview = {
+            delay = 50,
+          },
         },
         grep = {
           actions = {
