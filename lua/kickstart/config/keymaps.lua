@@ -89,6 +89,8 @@ vim.opt.hlsearch = true
 
 local map = vim.keymap.set
 
+map('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
 -- Diagnostic keymaps
 map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to Previous [d]iagnostic message' })
 map('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to Next [d]iagnostic message' })
