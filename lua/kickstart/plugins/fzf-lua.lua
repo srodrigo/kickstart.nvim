@@ -47,6 +47,7 @@ return {
         vim.keymap.set('n', '<leader>sq', '<cmd>FzfLua quickfix<cr>', { desc = 'Search Nvim [q]uickfix' }),
 
         -- search - text
+        vim.keymap.set('n', '<leader>/', '<cmd>FzfLua live_grep_native<cr>', { desc = 'Search Text [/]' }),
         vim.keymap.set('n', '<leader>sf', '<cmd>FzfLua live_grep_glob<cr>', { desc = 'Search Text [f]uzzy (Args)' }),
         vim.keymap.set('n', '<leader>sg', '<cmd>FzfLua live_grep_native<cr>', { desc = 'Search Text by [g]rep' }),
 
