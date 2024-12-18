@@ -33,7 +33,6 @@ return {
           { '<leader>g', group = '[g]it' },
           { '<leader>s', group = '[s]earch' },
           { '<leader>u', group = '[u]i' },
-          { '<leader>w', group = '[w]indow' },
         },
       },
       replace = {
