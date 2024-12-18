@@ -28,6 +28,7 @@ return {
           { '<leader>a', group = '[a]i' },
           { '<leader>b', group = '[b]uffer' },
           { '<leader>c', group = '[c]ode' },
+          { '<leader>d', group = '[d]ebug' },
           { '<leader>e', group = 'Tree [e]xplorer' },
           { '<leader>f', group = '[f]ile' },
           { '<leader>g', group = '[g]it' },
