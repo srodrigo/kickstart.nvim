@@ -47,7 +47,9 @@ require('lazy').setup({
 
   require 'kickstart.plugins.surround',
 
-  require 'kickstart.plugins.neo-tree',
+  -- require 'kickstart.plugins.neo-tree',
+
+  require 'kickstart.plugins.nvim-tree',
 
   require 'kickstart.plugins.lualine',
 

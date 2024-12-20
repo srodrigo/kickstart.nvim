@@ -3,6 +3,7 @@ local colorscheme = 'nord'
 local priority = 1000 -- Make sure to load this before all the other start plugins.
 
 local nordBackground = '#2D303C'
+local nord3 = '#4c566a'
 
 -- You can configure highlights by doing something like:
 vim.cmd.hi 'Comment gui=none'
@@ -25,7 +26,6 @@ local all_colorschemes = {
     priority = priority,
     init = function()
       vim.cmd.colorscheme 'nord'
-      -- For vim-fugitive
     end,
     opts = {
       diff = { mode = 'fg' },
@@ -33,6 +33,7 @@ local all_colorschemes = {
         highlights.Normal.bg = nordBackground
         highlights.DiffAdd.bg = 'NONE'
         highlights.DiffDelete.bg = 'NONE'
+        highlights.NvimTreeIndentMarker.fg = nord3
       end,
     },
   },

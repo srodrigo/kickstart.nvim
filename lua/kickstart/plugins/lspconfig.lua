@@ -137,9 +137,9 @@ return {
           -- map('<leader>cs', require('telescope.builtin').lsp_document_symbols, 'Document [s]ymbols')
           map('<leader>cs', require('fzf-lua').lsp_document_symbols, 'Document [s]ymbols')
 
-          map('<leader>cO', function()
-            require('neo-tree.command').execute { source = 'document_symbols', toggle = true }
-          end, 'Document Symbols [O]utline')
+          -- map('<leader>cO', function()
+          --   require('neo-tree.command').execute { source = 'document_symbols', toggle = true }
+          -- end, 'Document Symbols [O]utline')
 
           -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.

@@ -89,7 +89,11 @@ return {
           { 'location', padding = { left = 0, right = 1 } },
         },
       },
-      extensions = { 'neo-tree', 'lazy' },
+      extensions = {
+        -- 'neo-tree',
+        'nvim-tree',
+        'lazy',
+      },
     }
 
     return opts
