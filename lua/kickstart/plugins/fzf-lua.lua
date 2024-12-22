@@ -12,6 +12,9 @@ return {
           width = 0.95,
           preview = {
             delay = 50,
+            vertical = 'down:45%', -- up|down:size
+            horizontal = 'right:60%', -- right|left:size
+            layout = 'flex', -- horizontal|vertical|flex
           },
         },
         grep = {
