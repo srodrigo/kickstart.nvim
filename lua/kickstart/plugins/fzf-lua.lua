@@ -26,6 +26,9 @@ return {
             ['ctrl-r'] = { actions.toggle_ignore },
           },
         },
+        fzf_opts = {
+          ['--history'] = vim.fn.stdpath 'data' .. '/fzf-lua-history',
+        },
         lsp = {
           code_actions = {
             previewer = 'codeaction_native',
