@@ -17,13 +17,21 @@ return {
             layout = 'flex', -- horizontal|vertical|flex
           },
         },
+        files = {
+          actions = {
+            ['ctrl-i'] = { actions.toggle_ignore },
+            ['ctrl-h'] = { actions.toggle_hidden },
+          },
+        },
         grep = {
           actions = {
             -- actions inherit from 'actions.files' and merge
             -- this action toggles between 'grep' and 'live_grep'
             ['ctrl-g'] = { actions.grep_lgrep },
             -- uncomment to enable '.gitignore' toggle for grep
-            ['ctrl-r'] = { actions.toggle_ignore },
+            ['ctrl-i'] = { actions.toggle_ignore },
+            -- uncomment to enable 'hidden' toggle for grep
+            ['ctrl-h'] = { actions.toggle_hidden },
           },
         },
         fzf_opts = {
@@ -76,6 +84,9 @@ return {
 
         -- search - text
         vim.keymap.set('n', '<leader>/', '<cmd>FzfLua live_grep_native<cr>', { desc = 'Search Text [/]' }),
+        vim.keymap.set('n', '<leader>sa', function()
+          require('fzf-lua').live_grep_native { cwd = 'rg --color=never --ignore-case --hidden --no-ignore -g "!.git"' }
+        end, { desc = 'Search Text [a]ll (hidden)' }),
         vim.keymap.set('n', '<leader>sf', '<cmd>FzfLua live_grep_glob<cr>', { desc = 'Search Text [f]uzzy (Args)' }),
         vim.keymap.set('n', '<leader>sg', '<cmd>FzfLua live_grep_native<cr>', { desc = 'Search Text by [g]rep' }),
 
