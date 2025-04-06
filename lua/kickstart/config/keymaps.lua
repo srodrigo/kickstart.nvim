@@ -138,6 +138,8 @@ map('n', '<M-Down>', '<cmd>resize -2<cr>', { desc = 'Decrease Window Height' })
 map('n', '<M-Left>', '<cmd>vertical resize -2<cr>', { desc = 'Decrease Window Width' })
 map('n', '<M-Right>', '<cmd>vertical resize +2<cr>', { desc = 'Increase Window Width' })
 
+map('n', '<leader>w', '<cmd>wall<cr>', { desc = '[w]rite all' })
+
 -- Back to Normal mode
 map('i', 'jk', '<esc>')
 
