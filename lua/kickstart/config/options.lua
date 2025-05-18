@@ -14,6 +14,9 @@ vim.g.loaded_netrwPlugin = 1
 -- Enable 24-bit colour
 vim.opt.termguicolors = true
 
+-- Enable window borders
+vim.o.winborder = 'rounded'
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
